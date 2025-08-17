@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stopwatch — Gradient Circle UI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Stopwatch</h1>
+      <p class="tagline">Start • Pause • Reset • Laps</p>
+    </header>
+
+    <!-- Decorative gradient shapes -->
+    <div class="decor">
+      <div class="gradient-circle" aria-hidden="true"></div>
+      <div class="half-circle" aria-hidden="true"></div>
+    </div>
+
+    <section class="timer-card" role="region" aria-label="Stopwatch">
+      <div class="display" aria-live="polite" aria-atomic="true">
+        <span id="hours">00</span><small>h</small> :
+        <span id="minutes">00</span><small>m</small> :
+        <span id="seconds">00</span><small>s</small> .
+        <span id="millis">000</span>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn" class="btn primary" aria-label="Start (Space)">Start</button>
+        <button id="pauseBtn" class="btn" aria-label="Pause (Space)">Pause</button>
+        <button id="lapBtn" class="btn" aria-label="Lap (L)">Lap</button>
+        <button id="resetBtn" class="btn danger" aria-label="Reset (R)">Reset</button>
+      </div>
+      <p class="hint">Space: Start/Pause • L: Lap • R: Reset</p>
+    </section>
+
+    <section class="laps" role="region" aria-label="Lap times">
+      <div class="laps-header">
+        <h2>Laps</h2>
+        <div class="lap-actions">
+          <button id="exportBtn" class="btn ghost">Export CSV</button>
+          <button id="clearLapsBtn" class="btn ghost">Clear</button>
+        </div>
+      </div>
+      <ol id="lapList" class="lap-list"></ol>
+    </section>
+
+    <footer class="footer">
+      <p>Built with HTML • CSS • JavaScript</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
